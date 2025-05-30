@@ -11,6 +11,7 @@ Case 4: ligand-mediated Dimerization
 Case 5: Gene expression
 
 Here we first attempt the reference's way of degradation, and attempt some numbers which can apply on other Case. And make some Figures for each cases. 
+Then we compare the analytical solution with the SSA simulation result for the Case2 Birth_death.
 
 
 Rererence:
