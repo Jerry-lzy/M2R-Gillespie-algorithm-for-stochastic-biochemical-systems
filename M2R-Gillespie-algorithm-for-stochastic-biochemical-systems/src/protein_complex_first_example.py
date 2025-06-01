@@ -7,7 +7,7 @@ from scipy.integrate import odeint
 k = 0.005  # complex formation rate
 
 # species 0 = A, 1 = B, 2 = C
-R_form = Reaction({0: 1, 1: 1}, {2: 1}, rate=k)
+R_form = Reaction(reactants={0: 1, 1: 1}, products={2: 1}, rate=lambda state: k) # noqa
 initial = [50, 30, 0]  # [A], [B], [C]
 
 t_max = 100

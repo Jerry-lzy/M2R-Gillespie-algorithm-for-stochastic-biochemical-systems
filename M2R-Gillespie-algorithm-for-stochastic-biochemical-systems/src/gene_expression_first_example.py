@@ -11,10 +11,10 @@ k_tl = 0.2
 gamma_p = 0.05  # protein decay
 
 # reactions
-gene_tx = Reaction({}, {0: 1}, rate=k_tx)
-mRNA_deg = Reaction({0: 1}, {}, rate=gamma_m)  # noqa
-translation = Reaction({0: 1}, {0: 1, 1: 1}, rate=k_tl)
-protein_deg = Reaction({1: 1}, {}, rate=gamma_p)
+gene_tx = Reaction(reactants={},    products={0: 1}, rate=lambda state: k_tx) # noqa
+mRNA_deg = Reaction(reactants={0: 1}, products={}, rate=lambda state: gamma_m)  # noqa
+translation = Reaction(reactants={0: 1}, products={0: 1, 1: 1}, rate=lambda state: k_tl) # noqa
+protein_deg = Reaction(reactants={1: 1}, products={}, rate=lambda state: gamma_p) # noqa
 initial = [0, 0]
 t_max = 200
 

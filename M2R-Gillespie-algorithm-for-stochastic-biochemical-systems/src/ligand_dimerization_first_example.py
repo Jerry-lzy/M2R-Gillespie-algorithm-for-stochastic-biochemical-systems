@@ -7,7 +7,7 @@ from scipy.integrate import odeint
 k = 0.01
 
 # species 0 = S, 1 = S2
-R_dim = Reaction({0: 2}, {1: 1}, rate=k)
+R_dim = Reaction(reactants={0: 2}, products={1: 1}, rate=lambda state: k) # noqa
 initial = [100, 0]
 
 t_max = 200
