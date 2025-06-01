@@ -38,7 +38,7 @@ def plot_birth_death(k1, k2, X0, t_max, n_trajectories=200): # noqa
     birth = Reaction(reactants={}, products={0: 1},
                      rate=lambda state: k2)
     death = Reaction(reactants={0: 1}, products={},
-                     rate=lambda state: k1 * state[0])
+                     rate=lambda state: k1)
     reactions = [birth, death]
 
     # Single SSA trajectory vs ODE & analytic
