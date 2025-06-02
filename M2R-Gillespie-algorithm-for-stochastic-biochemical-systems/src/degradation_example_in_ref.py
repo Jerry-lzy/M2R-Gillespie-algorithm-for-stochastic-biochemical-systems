@@ -20,7 +20,7 @@ for run_idx in range(2):
 
 # plot analytic mean and ±1
 plt.plot(t, mean,  'r-',  linewidth=1.5, label='Analytic mean')
-plt.plot(t, mean+std, 'r--', linewidth=1.0, label='Analytic ±1')
+plt.plot(t, mean+std, 'r--', linewidth=1.0, label='Analytic ±1 std')
 plt.plot(t, mean-std, 'r--', linewidth=1.0)
 
 plt.xlabel('t')

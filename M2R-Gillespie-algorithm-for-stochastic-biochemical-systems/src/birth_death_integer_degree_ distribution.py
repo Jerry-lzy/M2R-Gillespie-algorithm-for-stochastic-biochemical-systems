@@ -36,11 +36,10 @@ def plot_birth_death_histogram(k1, k2, X0, t_max, # noqa
     n_max = int(np.ceil(all_samples.max()))
     n_vals = np.arange(n_min, n_max + 1)
 
-    # Use fixed bin edges at integer ±0.5, width=1
     bins = n_vals - 0.5
 
     plt.figure(figsize=(8, 5))
-    # draw bars with width=1 and no gaps
+    # draw bars with width=1
     counts, _, patches = plt.hist(all_samples,
                                   bins=np.append(bins, n_max + 0.5),
                                   density=True,
@@ -53,10 +52,10 @@ def plot_birth_death_histogram(k1, k2, X0, t_max, # noqa
     pn = analytic_birth_death_pn(n_vals, t_max, k1, k2, X0)
     plt.plot(n_vals, pn, 'ro-', markersize=4, label='Analytic p_n')
 
-    plt.xticks(n_vals)                      # show every integer on x
+    plt.xticks(n_vals)  # show every integer on x
     plt.xlabel('Number of molecules')
     plt.ylabel('Probability')
-    plt.title('Steady-state distribution (binned at integers)')
+    plt.title('Stationary distribution (binned at integers)')
     plt.legend()
     plt.tight_layout()
     plt.show()

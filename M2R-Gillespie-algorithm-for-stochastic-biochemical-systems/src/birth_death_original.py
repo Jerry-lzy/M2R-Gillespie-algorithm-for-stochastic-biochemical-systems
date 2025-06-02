@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 from gillespie import Reaction, my_gillespie
 from scipy.integrate import odeint
 
-# Case 2: birth-death
+# Birth-death
 k1 = 0.1  # death rate
 k2 = 1.0  # birth rate
-X0 = 0     # initial count
+X0 = 0
 t_max = 100
 
 # Define reactions

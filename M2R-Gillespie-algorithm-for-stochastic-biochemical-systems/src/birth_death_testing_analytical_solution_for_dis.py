@@ -38,7 +38,6 @@ def plot_birth_death_histogram_dense(k1, k2, X0, t_max, # noqa
     n_max = int(np.ceil(all_samples.max()))
     n_vals = np.arange(n_min, n_max + 1)
 
-    # bins from n_min-0.5 to n_max+0.5 with width=bin_width
     edges = np.arange(n_min - 0.5, n_max + 0.5 + bin_width, bin_width)
 
     plt.figure(figsize=(8, 5))
@@ -55,7 +54,7 @@ def plot_birth_death_histogram_dense(k1, k2, X0, t_max, # noqa
     plt.xticks(n_vals)
     plt.xlabel('Number of molecules')
     plt.ylabel('Probability')
-    plt.title(f'Steady-state distribution (bin width={bin_width})')
+    plt.title(f'Stationary distribution (bin width={bin_width})')
     plt.legend()
     plt.tight_layout()
     plt.show()

@@ -49,7 +49,7 @@ plt.plot(n_vals, pn, 'ro-', markersize=4, label='Analytic Binomial')
 
 plt.xlabel('Number of molecules n')
 plt.ylabel('Probability')
-plt.title(f'Degradation S→∅ distribution at t = {t_max}')
+plt.title(f'Degradation Station distribution at t = {t_max}')
 plt.xticks(n_vals[::10])
 plt.legend(loc='upper right')
 plt.tight_layout()
