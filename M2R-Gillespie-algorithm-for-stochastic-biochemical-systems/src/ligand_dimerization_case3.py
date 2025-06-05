@@ -24,7 +24,7 @@ R2 = Reaction(
 reactions = [R1, R2]
 
 
-# 3. Deterministic ODE system
+# Deterministic ODE system
 def ode_system(x, t): # noqa
     S1, S2 = x # noqa
     flux_R1 = k1 * S1 * S2 # noqa
@@ -37,7 +37,7 @@ def ode_system(x, t): # noqa
     return [dS1, dS2]
 
 
-# 4. Plot function
+# Plot function
 def plot_ligand_dimerization(S1_0, S2_0, t_max, n_ssa=5): # noqa
     # Solve deterministic ODE
     t_grid = np.linspace(0, t_max, 500)
