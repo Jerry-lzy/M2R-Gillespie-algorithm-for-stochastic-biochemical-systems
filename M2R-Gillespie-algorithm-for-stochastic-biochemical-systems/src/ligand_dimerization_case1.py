@@ -76,7 +76,7 @@ def plot_ligand_dimerization(S1_0, S2_0, t_max, n_ssa=5): # noqa
                  alpha=0.7,
                  label=(f"SSA run {i+1}"))
     ax2.set_ylabel("S2 count")
-    ax2.set_title("Ligand-mediated dimerization: S2(t)")
+    ax2.set_title("Ligand-mediated dimerization: S2(t) at S2_0 = 50")
     ax2.legend(fontsize="small", loc="upper right")
 
     # Final formatting
