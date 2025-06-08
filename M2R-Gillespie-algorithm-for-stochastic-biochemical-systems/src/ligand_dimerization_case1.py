@@ -6,7 +6,7 @@ from gillespie import Reaction, my_gillespie
 k1 = 0.002   # R1: S1 + S2 → 2 S1
 k2 = 0.0015  # R2: 2 S1 → S1 + S2
 
-
+# S2 is ligand, and S1 is dimerization
 # R1: S1 + S2 → 2 S1
 R1 = Reaction(
     reactants={0: 1, 1: 1},
