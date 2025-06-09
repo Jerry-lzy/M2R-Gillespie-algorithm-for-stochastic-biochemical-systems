@@ -78,7 +78,7 @@ def plot_stationary_distribution_S1_S2(S1_0, S2_0, t_max,burn_in=500.0, dt_sampl
     S2_ss = ode_sol[-1, 1] # noqa
 
     # Create subplots
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 8), sharex=False)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 8), sharex=False, constrained_layout=True) # noqa
 
     # Plot for S1
     ax1.hist(all_S1, bins=bins_S1, density=True,

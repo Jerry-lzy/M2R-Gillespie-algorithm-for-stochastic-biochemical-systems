@@ -98,7 +98,7 @@ def plot_stationary_distribution(A0, B0, C0, D0, t_max, # noqa
     A_ss = ode_sol[-1, 0] # noqa
     B_ss = ode_sol[-1, 1] # noqa
 
-    fig, (axA, axB) = plt.subplots(2, 1, figsize=(6, 8), sharex=False) # noqa
+    fig, (axA, axB) = plt.subplots(2, 1, figsize=(6, 8), sharex=False, constrained_layout=True) # noqa
 
     # Plot A
     axA.hist(all_A, bins=bins_A, density=True,
@@ -108,7 +108,6 @@ def plot_stationary_distribution(A0, B0, C0, D0, t_max, # noqa
     axA.set_xlabel("A molecule count")
     axA.set_ylabel("Probability")
     axA.set_title(f"Stationary distribution of A, A0 = 50") # noqa
-    axA.set_xticks(np.arange(A_min, A_max + 1))
     axA.legend(fontsize="small")
 
     # Plot B
@@ -119,7 +118,6 @@ def plot_stationary_distribution(A0, B0, C0, D0, t_max, # noqa
     axB.set_xlabel("B molecule count")
     axB.set_ylabel("Probability")
     axB.set_title(f"Stationary distribution of B B0 = 30") # noqa
-    axB.set_xticks(np.arange(B_min, B_max + 1))
     axB.legend(fontsize="small")
 
     plt.tight_layout()

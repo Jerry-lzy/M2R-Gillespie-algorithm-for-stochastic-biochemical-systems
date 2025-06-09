@@ -78,7 +78,7 @@ def plot_stationary_distribution_S1_S2(S1_0, S2_0, t_max,burn_in=500.0, dt_sampl
     S2_ss = ode_sol[-1, 1] # noqa
 
     # Create subplots
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 8), sharex=False)
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 8), sharex=False, constrained_layout=True) # noqa
 
     # Plot for S1
     ax1.hist(all_S1, bins=bins_S1, density=True,
@@ -88,7 +88,6 @@ def plot_stationary_distribution_S1_S2(S1_0, S2_0, t_max,burn_in=500.0, dt_sampl
     ax1.set_xlabel("S1 molecule count")
     ax1.set_ylabel("Probability")
     ax1.set_title(f"Stationary distribution of S1 S1_0=100") # noqa
-    ax1.set_xticks(np.arange(S1_min, S1_max + 1))
     ax1.legend(fontsize="small")
 
     # Plot for S2
@@ -99,7 +98,6 @@ def plot_stationary_distribution_S1_S2(S1_0, S2_0, t_max,burn_in=500.0, dt_sampl
     ax2.set_xlabel("S2 molecule count")
     ax2.set_ylabel("Probability")
     ax2.set_title(f"Stationary distribution of S2 S2_0=0") # noqa
-    ax2.set_xticks(np.arange(S2_min, S2_max + 1))
     ax2.legend(fontsize="small")
 
     plt.tight_layout()
