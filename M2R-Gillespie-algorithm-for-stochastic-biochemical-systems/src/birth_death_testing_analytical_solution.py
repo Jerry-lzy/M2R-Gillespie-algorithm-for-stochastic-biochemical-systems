@@ -36,7 +36,7 @@ def plot_birth_death1(k1, k2, X0, t_max, n_trajectories=200): # noqa
         max_ssa = max(max_ssa, traj[:, 0].max())
 
     #  ODE
-    plt.plot(t_grid, x_ode, 'k-', linewidth=1.5, label='ODE sol')
+    plt.plot(t_grid, x_ode, 'k-', linewidth=1.5, label='Deterministic')
     max_ode = x_ode.max()
 
     plt.plot(t_grid, mean, 'r-', linewidth=1.5, label='Analytic mean')

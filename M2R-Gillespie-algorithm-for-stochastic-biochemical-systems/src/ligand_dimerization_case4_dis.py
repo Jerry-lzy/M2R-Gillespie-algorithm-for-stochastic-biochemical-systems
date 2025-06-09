@@ -84,7 +84,7 @@ def plot_stationary_distribution_S1_S2(S1_0, S2_0, t_max,burn_in=500.0, dt_sampl
     ax1.hist(all_S1, bins=bins_S1, density=True,
              alpha=0.6, edgecolor="black", linewidth=0.5)
     ax1.axvline(S1_ss, color="red", linestyle="--", linewidth=1.5,
-                label=f"ODE mean ≈ {S1_ss:.1f}")
+                label=f"Deterministic ≈ {S1_ss:.1f}")
     ax1.set_xlabel("S1 molecule count")
     ax1.set_ylabel("Probability")
     ax1.set_title(f"Stationary distribution of S1 S1_0=0") # noqa
@@ -95,7 +95,7 @@ def plot_stationary_distribution_S1_S2(S1_0, S2_0, t_max,burn_in=500.0, dt_sampl
     ax2.hist(all_S2, bins=bins_S2, density=True,
              alpha=0.6, edgecolor="black", linewidth=0.5)
     ax2.axvline(S2_ss, color="red", linestyle="--", linewidth=1.5,
-                label=f"ODE mean ≈ {S2_ss:.1f}")
+                label=f"Deterministic ≈ {S2_ss:.1f}")
     ax2.set_xlabel("S2 molecule count")
     ax2.set_ylabel("Probability")
     ax2.set_title(f"Stationary distribution of S2 S2_0=0") # noqa

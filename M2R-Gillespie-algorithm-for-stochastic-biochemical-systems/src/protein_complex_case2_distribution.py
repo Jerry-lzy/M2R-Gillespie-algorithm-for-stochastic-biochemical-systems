@@ -104,7 +104,7 @@ def plot_stationary_distribution(A0, B0, C0, D0, t_max, # noqa
     axA.hist(all_A, bins=bins_A, density=True,
              alpha=0.6, edgecolor="black", linewidth=0.5)
     axA.axvline(A_ss, color="red", linestyle="--", linewidth=1.5,
-                label=f"ODE mean ≈ {A_ss:.1f}")
+                label=f"Deterministic ≈ {A_ss:.1f}")
     axA.set_xlabel("A molecule count")
     axA.set_ylabel("Probability")
     axA.set_title(f"Stationary distribution of A, A0 = 50") # noqa
@@ -114,7 +114,7 @@ def plot_stationary_distribution(A0, B0, C0, D0, t_max, # noqa
     axB.hist(all_B, bins=bins_B, density=True,
              alpha=0.6, edgecolor="black", linewidth=0.5)
     axB.axvline(B_ss, color="red", linestyle="--", linewidth=1.5,
-                label=f"ODE mean ≈ {B_ss:.1f}")
+                label=f"Deterministic ≈ {B_ss:.1f}")
     axB.set_xlabel("B molecule count")
     axB.set_ylabel("Probability")
     axB.set_title(f"Stationary distribution of B B0 = 30") # noqa
