@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 from gillespie import Reaction, my_gillespie
 
-# This code is quite similar to protein_complex_second.py
+# This code is quite similar to protein_complex_case1.py
 k1 = 0.001  # A + A → C
 k2 = 0.01  # A + B → D
 k3 = 1.2   # ∅ → A

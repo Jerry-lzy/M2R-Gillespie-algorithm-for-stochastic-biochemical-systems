@@ -37,7 +37,6 @@ def plot_gene_expression_vary_k_tl( # noqa
         R4 = Reaction({2:1}, {},            rate=lambda s: gamma_p) # noqa
         reactions = [R1, R2, R3, R4]
 
-        # deterministic solution
         ode_sol = odeint(ode_system, [D0, R0, P0], t_grid, args=(k_tl,))
 
         axR = axes[0, j] # noqa

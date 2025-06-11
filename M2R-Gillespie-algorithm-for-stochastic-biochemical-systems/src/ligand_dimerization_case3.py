@@ -39,6 +39,9 @@ def ode_system(x, t): # noqa
 
 # Plot function
 def plot_ligand_dimerization(S1_0, S2_0, t_max, n_ssa=5): # noqa
+    N = S1_0 + S2_0 # noqa
+    S1_ss = (k1 * N) / (k1 + k2 / 2) # noqa
+    S2_ss = N - S1_ss # noqa
     # Solve deterministic ODE
     t_grid = np.linspace(0, t_max, 500)
     ode_sol = odeint(ode_system, [S1_0, S2_0], t_grid)
@@ -52,6 +55,7 @@ def plot_ligand_dimerization(S1_0, S2_0, t_max, n_ssa=5): # noqa
     # deterministic
     ax1.plot(t_grid, ode_sol[:, 0],
              "--k", linewidth=1.5, label="Deterministic")
+    ax1.axhline(S1_ss, color='purple', linestyle='--', linewidth=1.5, label='Steady-state') # noqa
     # SSA runs
     for i in range(n_ssa):
         times, traj = my_gillespie(reactions, [S1_0, S2_0], t_max)
@@ -67,6 +71,7 @@ def plot_ligand_dimerization(S1_0, S2_0, t_max, n_ssa=5): # noqa
     # Plot for S2
     ax2.plot(t_grid, ode_sol[:, 1],
              "--k", linewidth=1.5, label="Deterministic")
+    ax2.axhline(S2_ss, color='purple', linestyle='--', linewidth=1.5, label='Steady-state') # noqa
     for i in range(n_ssa):
         # simulate SSA for S2
         times, traj = my_gillespie(reactions, [S1_0, S2_0], t_max)

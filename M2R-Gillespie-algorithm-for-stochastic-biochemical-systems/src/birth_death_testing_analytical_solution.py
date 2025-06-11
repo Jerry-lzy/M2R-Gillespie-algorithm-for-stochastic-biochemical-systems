@@ -37,6 +37,7 @@ def plot_birth_death1(k1, k2, X0, t_max, n_trajectories=200): # noqa
 
     #  ODE
     plt.plot(t_grid, x_ode, 'k-', linewidth=1.5, label='Deterministic')
+    plt.axhline(k2 / k1, color='purple', linestyle='--', linewidth=1.5, label='Deterministic Steady-state') # noqa
     max_ode = x_ode.max()
 
     plt.plot(t_grid, mean, 'r-', linewidth=1.5, label='Analytic mean')
