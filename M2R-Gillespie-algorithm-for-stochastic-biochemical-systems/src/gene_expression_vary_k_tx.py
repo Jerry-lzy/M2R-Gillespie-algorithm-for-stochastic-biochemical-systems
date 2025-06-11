@@ -43,7 +43,6 @@ def plot_gene_expression_vary_k_tx( # noqa
         axR = axes[0, j] # noqa
         axP = axes[1, j] # noqa
 
-        # --- mRNA row ---
         axR.plot(t_grid, ode_sol[:, 1],
                  "--k", linewidth=1.5, label="Deterministic mRNA")
         for i in range(n_ssa):
@@ -58,7 +57,6 @@ def plot_gene_expression_vary_k_tx( # noqa
             axR.legend(fontsize="small", loc="upper right")
         axR.tick_params(labelbottom=True)
 
-        # --- protein row ---
         axP.plot(t_grid, ode_sol[:, 2],
                  "--k", linewidth=1.5, label="Deterministic protein")
         for i in range(n_ssa):

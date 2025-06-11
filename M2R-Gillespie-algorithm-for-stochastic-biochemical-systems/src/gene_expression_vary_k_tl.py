@@ -37,7 +37,7 @@ def plot_gene_expression_vary_k_tl( # noqa
         R4 = Reaction({2:1}, {},            rate=lambda s: gamma_p) # noqa
         reactions = [R1, R2, R3, R4]
 
-        # deterministic ODE solution
+        # deterministic solution
         ode_sol = odeint(ode_system, [D0, R0, P0], t_grid, args=(k_tl,))
 
         axR = axes[0, j] # noqa
@@ -61,7 +61,6 @@ def plot_gene_expression_vary_k_tl( # noqa
             axR.legend(fontsize='small', loc='upper right')
         axR.tick_params(labelbottom=True)
 
-        # --- protein subplot ---
         axP.plot(
             t_grid, ode_sol[:, 2],
             '--k', linewidth=1.5, label='Deterministic protein'
