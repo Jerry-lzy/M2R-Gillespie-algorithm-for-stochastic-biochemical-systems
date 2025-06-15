@@ -5,7 +5,7 @@ from scipy.special import comb
 
 # Parameters for the degradation reaction
 k = 1.0
-X0 = 100
+X0 = 20
 t_max = 6.0
 n_runs = 500
 
@@ -40,7 +40,7 @@ plt.hist(final_counts,
          alpha=0.6,
          edgecolor='black',
          linewidth=0.5,
-         label=f'SSA final dist (N={n_runs})')
+         label=f'SSA ')
 
 
 n_vals = np.arange(n_min, n_max + 1)
